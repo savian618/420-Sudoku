@@ -71,8 +71,74 @@ public class SudokuSolver
    private Set<Character> getOptionsForThisSpot(int row, int col) 
    {
 		Set<Character> choices = new HashSet<Character>();
-		for (char c = '1'; c <= '9'; c++)
-			choices.add(c);
+		for (char c = '1'; c <= '9'; c++) {
+			boolean used = false;
+			for(int tr = 0; tr < 9; tr++) {
+				if(puzzle[row][tr] == c) {
+					used = true;
+				}
+//				if(row >= 0 && row <= 2 && tr >= 0 && tr <= 2) {
+//					for(int cr = 0; cr < 9; cr++) {
+//						if(col >= 0 && col <= 2 && cr >= 0 && cr <= 2) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 3 && col <= 5 && cr >= 3 && cr <= 5 ) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 6 && col <= 8 && cr >= 6 && cr <= 8) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//					}
+//				}
+//				if(row >= 3 && row <= 5 && tr >= 3 && tr <= 5 ) {
+//					for(int cr = 0; cr < 9; cr++) {
+//						if(col >= 0 && col <= 2 && cr >= 0 && cr <= 2) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 3 && col <= 5 && cr >= 3 && cr <= 5 ) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 6 && col <= 8 && cr >= 6 && cr <= 8) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//					}
+//				}
+//				if(row >= 6 && row <= 8 && tr >= 6 && tr <= 8 ) {
+//					for(int cr = 0; cr < 9; cr++) {
+//						if(col >= 0 && col <= 2 && cr >= 0 && cr <= 2) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 3 && col <= 5 && cr >= 3 && cr <= 5 ) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//						if(col >= 6 && col <= 8 && cr >= 6 && cr <= 8) {
+//							if(puzzle[tr][cr] == c) {
+//								used = true;
+//							}
+//						}
+//					}
+//				}
+			}
+			if(used == false) {
+				choices.add(c);
+			}
+		}
 		
 		return choices;
 
